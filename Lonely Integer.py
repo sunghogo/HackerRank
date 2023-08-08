@@ -15,14 +15,10 @@ import sys
 
 def lonelyinteger(a):
     # Write your code here
-    dupe_dict = {}
+    lone_integer = 0
     for num in a:
-        if num in dupe_dict:
-            dupe_dict.pop(num)
-        else:
-            dupe_dict[num] = 0
-    for key in dupe_dict:
-        return key
+        lone_integer ^= num
+    return lone_integer
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
